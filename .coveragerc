@@ -1,0 +1,5 @@
+[report]
+omit =
+    build_examples.py
+    runtests.py
+    setup.py

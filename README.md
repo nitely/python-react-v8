@@ -1,5 +1,10 @@
 # Python-React-V8
 
+[![Build Status](https://img.shields.io/travis/nitely/python-react-v8.svg?style=flat-square)](https://travis-ci.org/nitely/python-react-v8)
+[![Coverage Status](https://img.shields.io/coveralls/nitely/python-react-v8.svg?style=flat-square)](https://coveralls.io/r/nitely/python-react-v8)
+[![pypi](https://img.shields.io/pypi/v/python-react-v8.svg?style=flat-square)](https://pypi.python.org/pypi/python-react-v8)
+[![licence](https://img.shields.io/pypi/l/python-react-v8.svg?style=flat-square)](https://raw.githubusercontent.com/nitely/python-react-v8/master/LICENSE)
+
 Thin wrapper around [v8-cffi](https://github.com/nitely/v8-cffi) to render React views server-side.
 
 
@@ -47,8 +52,8 @@ Read the [docs](http://python-react-v8.readthedocs.org/en/latest/).
 
 ## Examples
 
-* [Flux](https://github.com/nitely/python-react-v8/tree/master/example/flux)
-* [Simple](https://github.com/nitely/python-react-v8/tree/master/example/simple)
+* [Flux](https://github.com/nitely/python-react-v8/tree/master/examples/flux)
+* [Simple](https://github.com/nitely/python-react-v8/tree/master/examples/simple)
 
 
 ## License
