@@ -16,3 +16,10 @@ Utils Module
 
 .. automodule:: react.utils
    :members: set_up, load_libs, run_script
+
+
+Excepts Module
+--------------
+
+.. automodule:: react.excepts
+   :members:

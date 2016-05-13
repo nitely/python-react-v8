@@ -7,6 +7,7 @@ import os
 import tempfile
 from contextlib import contextmanager
 
+import react
 from react import utils
 
 
@@ -60,6 +61,13 @@ class UtilsTest(unittest.TestCase):
 
         # Cleanup
         self.assertEqual('true', utils.run_script('delete %s.foo' % _global))
+
+    def test_run_script_exception(self):
+        """
+        It should propagate V8 exceptions
+        """
+        script = 'fooUndefined()'
+        self.assertRaises(react.excepts.V8Error, utils.run_script, script)
 
     def test_load_libs(self):
         """

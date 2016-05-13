@@ -56,6 +56,20 @@ Read the [docs](http://python-react-v8.readthedocs.org/en/latest/).
 * [Simple](https://github.com/nitely/python-react-v8/tree/master/examples/simple)
 
 
+## Build examples
+
+```
+$ make build-examples
+```
+
+
+## Tests
+
+```
+$ make test
+```
+
+
 ## License
 
 MIT

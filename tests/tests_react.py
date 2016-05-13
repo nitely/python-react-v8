@@ -69,6 +69,20 @@ class ReactTest(unittest.TestCase):
             r.assert_called_once_with(
                 'global.RenderToString({"foo": "foo", "bar": 1})')
 
+    def test_render_exception(self):
+        """
+        It should propagate V8 exceptions
+        """
+        react_ = react.React({})
+
+        with patch(
+                'react.utils.run_script',
+                autospec=True,
+                side_effect=react.excepts.V8Error) as r:
+            self.assertRaises(react.excepts.V8Error, react_.render)
+            r.assert_called_once_with(
+                'global.RenderToString({})')
+
     def test_to_json(self):
         """
         It should convert data to json

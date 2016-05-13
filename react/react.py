@@ -24,6 +24,10 @@ def set_up():
     global V8 context.\
     Should be called once\
     in the app lifetime.
+
+    :raises react.excepts.V8Error: if there was\
+    an error running the JS script. This should\
+    usually not be handled
     """
     utils.set_up()
 
@@ -65,6 +69,8 @@ class React:
         """
         :return: Result of the JS render call
         :rtype: str
+        :raises react.excepts.V8Error: if there was\
+        an error running the JS script
         """
         return utils.run_script(self.build_js_script())
 

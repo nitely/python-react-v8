@@ -69,3 +69,44 @@ But there are two things to have in mind:
        it gets exposed as a JS object within the HTML.
     2. The data passed to react should be exactly the same as the data provided
        by the API endpoint for that view, so the query should be the same.
+
+
+Multiple stores
+---------------
+
+::
+
+    # ...
+    data = {
+        'postIts': orm.query().all().only('id', 'text'),
+        'comments': orm.query().all().only('id', 'created_by', 'comment_html')
+    }
+    # ...
+
+Seriously.
+
+
+Handling errors
+---------------
+
+::
+
+    import react
+
+    # ...
+    try:
+        content = react_.render()
+    except react.excepts.V8Error as err:
+        logger.error(err)
+        content = ''
+    # ...
+
+When handling exceptions, there is not much to do other
+than set an empty content and let react render it client-side.
+
+The data can still be pre-loaded, assuming the error wasn't
+thrown by the load function.
+
+It may be a good idea to log the data (as json) to replicate
+the error later. Since most of the logic is the same client-side,
+once you have replicated it, it can be debugged in the web-browser.

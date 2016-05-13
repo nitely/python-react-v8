@@ -14,6 +14,9 @@ def set_up():
     Should be called once\
     in the app lifetime,\
     usually through :py:func:`react.set_up()`.
+
+    :raises react.excepts.V8Error: if there was\
+    an error. This should usually not be handled
     """
     shortcuts.set_up()
 
@@ -24,6 +27,8 @@ def load_libs(scripts_paths):
     global V8 context for later use.
 
     :param list scripts_paths: List of javascript files
+    :raises react.excepts.V8Error: if there was\
+    an error running the JS script
     """
     (shortcuts
      .get_context()
@@ -37,6 +42,8 @@ def run_script(script):
 
     :param str script: Code to execute\
     within the V8 context
+    :raises react.excepts.V8Error: if there was\
+    an error running the JS script
     """
     return (shortcuts
             .get_context()
