@@ -10,13 +10,12 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 REQUIREMENTS = open(
     os.path.join(os.path.dirname(__file__), 'requirements.txt'),
     encoding='utf-8').read()
-VERSION = __import__('react').__version__
 URL = 'https://github.com/nitely/python-react-v8'
 README = "For more info, go to: %s" % URL
 
 setup(
     name='python-react-v8',
-    version=VERSION,
+    version='0.1.2',
     description='Thin wrapper around v8-cffi to render React views server-side.',
     author='Esteban Castro Borsani',
     author_email='ecastroborsani@gmail.com',
