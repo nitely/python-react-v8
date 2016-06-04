@@ -15,7 +15,7 @@ README = "For more info, go to: %s" % URL
 
 setup(
     name='python-react-v8',
-    version='0.1.2',
+    version='0.1.3',
     description='Thin wrapper around v8-cffi to render React views server-side.',
     author='Esteban Castro Borsani',
     author_email='ecastroborsani@gmail.com',

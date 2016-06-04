@@ -10,4 +10,4 @@ __all__ = [
     'utils',
     'excepts']
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
