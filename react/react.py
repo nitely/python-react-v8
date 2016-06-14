@@ -63,7 +63,7 @@ class React:
         :rtype: str
         """
         return ('global.RenderToString({})'
-                .format(self._as_json()))
+                .format(self.as_json()))
 
     def render(self):
         """
@@ -74,16 +74,22 @@ class React:
         """
         return utils.run_script(self.build_js_script())
 
-    def _as_json(self):
+    def as_json(self):
+        """
+        Serialize :py:attr:`.opts` into a json.\
+        This is used internally and can\
+        be overridden to provide a faster\
+        json serializer.
+
+        :return: Opts in json format
+        :rtype: str
+        """
         return self.to_json(self.opts)
 
     @staticmethod
     def to_json(data):
         """
-        Serialize a dict into a json.\
-        This is used internally and can\
-        be overridden to provide a faster\
-        json serializer.
+        Serialize a dict into a json.
 
         :param data: Dict to convert into JSON
         :type data: dict or str
