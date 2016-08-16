@@ -8,12 +8,13 @@ dist: trusty
 # sudo: false
 
 python:
+  - "2.7"
   - "3.4"
   - "3.5"
 
 install:
   - pip install --upgrade pip
-  - pip install -r requirements.txt
+  - pip install -r requirements_dev.txt
   - pip install coveralls
 script:
   - python ./runtests.py

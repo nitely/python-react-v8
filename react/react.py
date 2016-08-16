@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
 import json
+
+import six
 
 from . import utils
 
@@ -96,10 +99,15 @@ class React:
         :return: Received data in json format
         :rtype: str
         """
-        if isinstance(data, str):
+        if isinstance(data, six.text_type):
             return data
 
-        return json.dumps(data)
+        data_ = json.dumps(data)
+
+        if isinstance(data_, six.binary_type):
+            return data_.decode('utf-8')
+        else:
+            return data_
 
     @staticmethod
     def to_dict(json_str):
