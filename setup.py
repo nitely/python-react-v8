@@ -4,18 +4,31 @@
 import os
 from setuptools import setup, find_packages
 
+
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-with open(os.path.join(os.path.dirname(__file__), 'requirements.txt')) as f:
+BASE_DIR = os.path.join(os.path.dirname(__file__))
+
+with open(os.path.join(BASE_DIR, 'requirements.txt')) as f:
     REQUIREMENTS = f.read()
 
 URL = 'https://github.com/nitely/python-react-v8'
 README = "For more info, go to: {}".format(URL)
 
+
+def get_version(package):
+    """Get version without importing the lib"""
+    with open(os.path.join(BASE_DIR, package, '__init__.py')) as fh:
+        return [
+            l.split('=', 1)[1].strip().strip("'")
+            for l in fh.readlines()
+            if '__version__' in l][0]
+
+
 setup(
     name='python-react-v8',
-    version='0.1.4',
+    version=get_version(package='react'),
     description='Thin wrapper around v8-cffi to render React views server-side.',
     author='Esteban Castro Borsani',
     author_email='ecastroborsani@gmail.com',
