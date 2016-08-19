@@ -11,6 +11,8 @@ import unittest
 import logging
 import collections
 
+import six
+
 import react
 from react.react import _DEFINE_GLOBALS_SCRIPT
 
@@ -100,6 +102,9 @@ class ReactTest(unittest.TestCase):
         self.assertEqual(
             '{"foo": "foo", "bar": 1}',
             react.React.to_json('{"foo": "foo", "bar": 1}'))
+        self.assertIsInstance(
+            react.React.to_json('{"foo": "foo", "bar": 1}'),
+            six.text_type)
 
     def test_to_dict(self):
         """
