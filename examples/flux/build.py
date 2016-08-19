@@ -2,6 +2,7 @@
 
 import os
 import time
+import io
 
 from react import React
 from react import utils
@@ -43,7 +44,7 @@ def write_index():
 
     assert response['status'] == 200
 
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as fh:
+    with io.open(OUTPUT_PATH, 'w', encoding='utf-8') as fh:
         fh.write(template.format(
             pre_rendered_content=response['result'],
             pre_loaded_state=react.to_json(data)))

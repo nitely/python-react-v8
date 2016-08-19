@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
+
 from v8cffi.exceptions import (
     V8Error,
     V8JSError,

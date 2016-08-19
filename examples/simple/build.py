@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
 import os
+import io
 
 from react import React
 from react import utils
@@ -35,7 +37,7 @@ def write_index():
         'component': 'Counter',
         'data': data})
 
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as fh:
+    with io.open(OUTPUT_PATH, 'w', encoding='utf-8') as fh:
         fh.write(template.format(
             pre_rendered_content=react.render(),
             pre_loaded_state=react.to_json(data)))
